@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Container from "./Container";
-import Row from "./Row";
-import Col from "./Col";
+import Row from "./Table";
+import Col from "./TableBody";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 import EmployeeDetail from "./EmployeeDetail";
