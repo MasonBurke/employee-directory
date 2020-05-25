@@ -1,8 +1,8 @@
 import React from "react";
-import EmployeeContainer from "./components/EmployeeContainer";
+import DataArea from "./components/DataArea"
 
 function App() {
-  return <EmployeeContainer />;
+  return <DataArea />;
 }
 
 export default App;

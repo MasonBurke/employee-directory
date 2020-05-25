@@ -1,7 +1,4 @@
 import React from "react";
-import API from "../utils/API"
-import DataArea from "./DataArea"
-import EmployeeContainer from "./EmployeeContainer"
 
 function TableBody({users}) {
 function formatDate(date) {
@@ -16,17 +13,17 @@ function formatDate(date) {
 
 return (
   <tbody>
-      {users !== undefined && users.name !== undefined ? (
+      {users[0] !== undefined && users.name[0] !== undefined ? (
         users.map(({login, name, picture, phone, email, dob}) => {
           return(
             <tr key={login.uuid}>
               <td data-th="Image" className="align-middle"> 
               <img src={picture.medium} className="img-responsive"> </img>
               </td>
-              <td data-th="Name" className="align-middle"> {name.first} {name.last}</td>
+              <td data-th="Name" className="align-middle">{name.first} {name.last}</td>
               <td data-th="Phone" className="align-middle"> {phone.cell}</td>
               <td data-th="Email" className="align-middle"> {email}</td>
-              <td data-th="DOB" className="align-middle"> {dob.date}</td>
+              <td data-th="DOB" className="align-middle"> {formatDate(dob.date)}</td>
             </tr>
           )
         })  
