@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../utils/API"
-
+import DataArea from "./DataArea"
+import EmployeeContainer from "./EmployeeContainer"
 
 function TableBody({users}) {
 function formatDate(date) {
@@ -12,9 +13,10 @@ function formatDate(date) {
   const formatDate = [month,day,year].join("-")
   return formatDate
 }
-  return (
-    <tbody>
-      {users[0] !== undefined && users[0].name !== undefined ? (
+
+return (
+  <tbody>
+      {users !== undefined && users.name !== undefined ? (
         users.map(({login, name, picture, phone, email, dob}) => {
           return(
             <tr key={login.uuid}>
